@@ -20,8 +20,10 @@
     "express": "^4.17.1",
     "helmet": "^4.2.0",
     "mongoose": "^5.10.16",
+    "prom-client": "^14.1.1",
     "prop-types": "^15.7.2",
-    "react-avatar": "^3.9.7"
+    "react-avatar": "^3.9.7",
+    "winston": "^3.8.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: students-server
+  labels:
+    app: students-server
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: students-server
+  template:
+    metadata:
+      labels:
+        app: students-server
+    spec:
+      containers:
+        - name: students-server
+          image: ramikammoun2023/server
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000

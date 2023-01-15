@@ -1,7 +1,7 @@
 import React from 'react';
 import './Student.css';
 import { Link } from 'react-router-dom';
-import Avatar from 'react-avatar';
+//import Avatar from 'react-avatar';
 
 
 const Student = ({ _id, name, email, enrollnumber, removeStudent }) => {

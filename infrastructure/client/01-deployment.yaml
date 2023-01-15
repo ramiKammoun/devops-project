@@ -1,0 +1,30 @@
+
+apiVersion: apps/v1
+kind: Deployment # type of resource
+metadata:
+  name: students-client
+  labels:
+    app: students-client
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: students-client
+  template:
+    metadata:
+      labels:
+        app: students-client
+    spec:
+      containers:
+        - name: students-client
+          image: ramikammoun2023/client
+          imagePullPolicy: Always
+          resources:
+          ports:
+            - containerPort: 3000
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 3000
+      restartPolicy: Always

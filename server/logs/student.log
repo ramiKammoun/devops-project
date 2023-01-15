@@ -1,0 +1,30 @@
+{"level":"info","message":"Get the list of all students","timestamp":"2023-01-15T10:01:14.583Z"}
+{"level":"info","message":"Get the list of all students","request_id":"7ce5f12c-edc1-4460-a370-8baf330788a7","timestamp":"2023-01-15T10:06:54.824Z","user_ip":"::ffff:127.0.0.1"}
+{"level":"info","message":"Get the list of all students","request_id":"89ca5e9c-f1e3-4e36-96cc-764f603fda8c","timestamp":"2023-01-15T10:07:09.486Z","user_ip":"::ffff:127.0.0.1"}
+{"level":"info","message":"Get the list of all students","request_id":"d4f469dc-b9a0-443f-aa86-df73d5498167","timestamp":"2023-01-15T10:08:54.109Z","user_ip":"::ffff:127.0.0.1"}
+{"level":"info","message":"Get the list of all students","request_id":"1e89781f-09d4-4c18-b040-ea5f225fdd82","timestamp":"2023-01-15T10:13:27.002Z","user_ip":"::ffff:127.0.0.1"}
+{"level":"info","message":"Get the student with the ID","request_id":"6d39effc-f65c-4e34-a6ba-c0676debf953","student_id":"63c2b6550caf015da8321671","timestamp":"2023-01-15T10:13:36.130Z","user_ip":"::ffff:127.0.0.1"}
+{"level":"info","message":"Get the student with the ID","request_id":"5f5c5730-23c6-404d-9a87-58e4812db001","student_id":"63c2b6550caf015da8321671","timestamp":"2023-01-15T10:13:38.801Z","user_ip":"::ffff:127.0.0.1"}
+{"level":"info","message":"Get the student with the ID","request_id":"1b97d658-2954-40cf-8373-14c5274c4317","student_id":"63c2b6550caf015da83216711","timestamp":"2023-01-15T10:13:41.632Z","user_ip":"::ffff:127.0.0.1"}
+{"level":"error","message":"Student with the following ID does not exist","request_id":"0c6a41ed-52b8-4a1e-9f35-5c2398d3045a","student_id":"63c2b6550caf015da83216711","timestamp":"2023-01-15T10:13:41.643Z","user_ip":"::ffff:127.0.0.1"}
+{"level":"info","message":"Get the student with the ID","request_id":"a5bf81bb-758e-4119-87ef-6f48d45cbc36","student_id":"63c2b6550caf015da83216711","timestamp":"2023-01-15T10:13:45.298Z","user_ip":"::ffff:127.0.0.1"}
+{"level":"error","message":"Student with the following ID does not exist","request_id":"039f1eb2-80cd-4f3f-bd48-cc37d6d60122","student_id":"63c2b6550caf015da83216711","timestamp":"2023-01-15T10:13:45.302Z","user_ip":"::ffff:127.0.0.1"}
+{"level":"info","message":"Get the student with the ID","request_id":"05b003a1-ac9d-45a8-95e2-799d74b5f17f","student_id":"63c2b6550caf015da83216711","timestamp":"2023-01-15T10:20:58.832Z","user_ip":"::ffff:127.0.0.1"}
+{"level":"error","message":"Student with the following ID does not exist","request_id":"0233fb41-2f0f-4199-966d-3a43539a0744","student_id":"63c2b6550caf015da83216711","timestamp":"2023-01-15T10:20:58.848Z","user_ip":"::ffff:127.0.0.1"}
+{"level":"info","message":"Get the student with the ID","request_id":"a50f21c4-6bf6-43c1-a675-c5def0df030a","student_id":"63c2b6550caf015da8321671","timestamp":"2023-01-15T10:21:02.612Z","user_ip":"::ffff:127.0.0.1"}
+{"level":"info","message":"Get the list of all students","request_id":"0f1f6144-299b-4748-976d-3238080d35c7","timestamp":"2023-01-15T10:21:07.378Z","user_ip":"::ffff:127.0.0.1"}
+{"level":"info","message":"Get the list of all students","request_id":"eff478c6-0691-4568-b536-314a33117eab","timestamp":"2023-01-15T12:26:19.031Z","user_ip":"127.0.0.1"}
+{"level":"info","message":"Adding a new student","request_id":"b546edf0-8cb7-4fec-a35f-080b363a5df6","timestamp":"2023-01-15T12:26:38.203Z","user_ip":"127.0.0.1"}
+{"level":"error","message":"Failed to add a new student","request_id":"3119779d-5a6d-478f-bf49-56191fa80d5c","timestamp":"2023-01-15T12:26:38.394Z","user_ip":"127.0.0.1"}
+{"level":"info","message":"Get the list of all students","request_id":"2c70b064-9361-4c00-ae2f-1f98dae2e921","timestamp":"2023-01-15T12:30:04.721Z","user_ip":"127.0.0.1"}
+{"level":"error","message":"Failed to add a new student","request_id":"870252dd-2889-4df2-84d5-36d179e8d341","timestamp":"2023-01-15T12:30:19.688Z","user_ip":"127.0.0.1"}
+{"level":"info","message":"Adding a new student","request_id":"56c9a741-96c2-4172-aad4-9491f177fa58","timestamp":"2023-01-15T12:32:09.111Z","user_ip":"127.0.0.1"}
+{"level":"info","message":"Get the list of all students","request_id":"9b83bfb2-9760-4d11-9858-9d1908966518","timestamp":"2023-01-15T12:34:44.648Z","user_ip":"127.0.0.1"}
+{"level":"info","message":"Student with the following ID has been deleted","request_id":"59559ae7-d982-4ca2-a772-7fbf35f06d17","student_id":"63c3f2483a952e2b857ae79a","timestamp":"2023-01-15T12:34:47.011Z","user_ip":"127.0.0.1"}
+{"level":"error","message":"Student with the following ID does not exist","request_id":"52699c5d-9f6c-4896-90b4-5b3929c58eac","student_id":"63c3f2483a952e2b857ae79a","timestamp":"2023-01-15T12:34:47.183Z","user_ip":"127.0.0.1"}
+{"level":"info","message":"Adding a new student","request_id":"ac39067a-103d-4e2d-a637-f8ebd932938c","timestamp":"2023-01-15T13:17:30.024Z"}
+{"level":"info","message":"Get the list of all students","request_id":"847f4282-51a7-4901-abc9-2a049b882817","timestamp":"2023-01-15T13:21:36.962Z","user_ip":"127.0.0.1"}
+{"level":"info","message":"Adding a new student","timestamp":"2023-01-15T13:22:09.897Z"}
+{"level":"info","message":"Get the list of all students","request_id":"12bfb88c-938c-4561-b173-dbbefc012185","timestamp":"2023-01-15T13:23:12.252Z","user_ip":"127.0.0.1"}
+{"level":"info","message":"Adding a new student","timestamp":"2023-01-15T13:23:27.598Z"}
+{"level":"info","message":"Get the list of all students","request_id":"a49882e8-a9c4-4ee8-a174-a76b14f886d4","timestamp":"2023-01-15T13:24:43.133Z","user_ip":"127.0.0.1"}
