@@ -1,0 +1,15 @@
+deployment:
+  replicas: 1
+
+image:
+  tag: latest
+  apiname: ramikammoun2023/server
+  frontname: ramikammoun2023/client
+
+http:
+  frontendport: 3000
+  backendport: 5000
+
+labels:
+  app: students-server
+  env: production

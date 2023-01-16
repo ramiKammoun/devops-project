@@ -10,7 +10,7 @@ spec:
     - http:
         paths:
         - pathType: Prefix
-          path: "/server"
+          path: "/api"
           backend:
             service:
               name: students-server-service

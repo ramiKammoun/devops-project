@@ -1,0 +1,4 @@
+apiVersion: v2
+name: students-list
+description: Helm chart for students list project
+version: 0.1.0

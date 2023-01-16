@@ -17,7 +17,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://192.168.49.2/server",
+  "proxy": "http://51.138.203.243/api",
   "browserslist": {
     "production": [
       ">0.2%",

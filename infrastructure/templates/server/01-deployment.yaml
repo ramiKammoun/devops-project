@@ -14,10 +14,22 @@ spec:
     metadata:
       labels:
         app: students-server
+      annotations:
+        prometheus.io/port: "5000"
+        prometheus.io/path: "/metrics"
+        prometheus.io/scrape: "true"
     spec:
       containers:
         - name: students-server
           image: ramikammoun2023/server
           imagePullPolicy: Always
+
+          env:
+          - name: PORT
+            valueFrom:
+              configMapKeyRef:
+                name: my-config
+                key: port
+
           ports:
             - containerPort: 5000

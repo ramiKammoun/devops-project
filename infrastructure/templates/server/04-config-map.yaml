@@ -1,0 +1,8 @@
+apiVersion: v1
+data:
+  key1: config1
+  NODE_END: "production"
+  port: "5000"
+kind: ConfigMap
+metadata:
+  name: my-config

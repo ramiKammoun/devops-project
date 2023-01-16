@@ -1,0 +1,7 @@
+datadog:
+  apikey: 4ee1546ec11915d68c07cd6a4a24e7d0
+  logs:
+    enabled: true
+    containerCollectAll: true
+  kubelet: 
+    tlsVerify: false
