@@ -14,9 +14,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(require('cors')());
 app.use(require('helmet')());
 
-app.use('/server/api/students', require('./routes/students'));
+app.use('/api/students', require('./routes/students'));
 
-app.get('/server/', (req, res) => {
+app.get('/api', (req, res) => {
   try{
       requestCounter.inc({'method':'Get' ,'route': '/', 'status_code': 200, 'many':false})
       res.send('This is the students Platform!');

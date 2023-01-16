@@ -20,4 +20,4 @@ const total_senior_students = new client.Gauge({
     help: '\n Total number of senior students',
   });
 
-module.exports = {requestCounter}
+module.exports = {requestCounter, total_Students, total_senior_students}

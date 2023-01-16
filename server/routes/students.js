@@ -22,17 +22,17 @@ router.get('/', async (req, res) => {
   try {
     const students = await Students.find({});
 
-    //var ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress
-    //let reqID = getRequestId();
-    //rootLogger.info('Get the list of all students', {request_id: reqID, user_ip: ip});
+    var ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress
+    let reqID = getRequestId();
+    rootLogger.info('Get the list of all students', {request_id: reqID, user_ip: ip});
 
-    //requestCounter.inc({'method':'Get', 'route': '/api/students', 'status_code': 200, 'many':true})
+    requestCounter.inc({'method':'Get', 'route': '/api/students', 'status_code': 200, 'many':true})
     res.send({ students })
   } catch(err) {
-    //requestCounter.inc({'method':'Get', 'route': '/api/students', 'status_code': 400, 'many':true})
-    //var ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress
-    //let reqID = getRequestId();
-    //rootLogger.error('Get the list of all students', {request_id: reqID, user_ip: ip});
+    requestCounter.inc({'method':'Get', 'route': '/api/students', 'status_code': 400, 'many':true})
+    var ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress
+    let reqID = getRequestId();
+    rootLogger.error('Get the list of all students', {request_id: reqID, user_ip: ip});
     res.status(400).send({ error: err });
   }
 });
@@ -43,21 +43,21 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
 
-    //var ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress
-    //let reqID = getRequestId();
-    //rootLogger.info('Get the student with the ID', {student_id:req.params.id,request_id: reqID, user_ip: ip});
+    var ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress
+    let reqID = getRequestId();
+    rootLogger.info('Get the student with the ID', {student_id:req.params.id,request_id: reqID, user_ip: ip});
 
-    //requestCounter.inc({'method':'Get', 'route': '/api/students/:id', 'status_code': 200, 'many':false})
+    requestCounter.inc({'method':'Get', 'route': '/api/students/:id', 'status_code': 200, 'many':false})
     const student = await Students.findById(req.params.id);
     res.send({ student });
     //requestLogger.info('Creating a new task', { request_id: req.requestId});
   } catch (err) {
 
-    //var ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress
-    //let reqID = getRequestId();
-    //rootLogger.error('Student with the following ID does not exist', {student_id:req.params.id,request_id: reqID, user_ip: ip});
+    var ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress
+    let reqID = getRequestId();
+    rootLogger.error('Student with the following ID does not exist', {student_id:req.params.id,request_id: reqID, user_ip: ip});
 
-    //requestCounter.inc({'method':'Get', 'route': '/api/students/:id', 'status_code': 400, 'many':false})
+    requestCounter.inc({'method':'Get', 'route': '/api/students/:id', 'status_code': 400, 'many':false})
     res.status(404).send({ message: 'Student not found!' });
   }
 });
@@ -69,25 +69,25 @@ router.post('/', async (req, res) => {
   try {
     const newStudent = await Students.create({ name: req.body.name, email: req.body.email, enrollnumber: req.body.enrollnumber });
     
-    //var ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress
-    //let reqID = getRequestId();
-    //rootLogger.info('Adding a new student');
+    var ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress
+    let reqID = getRequestId();
+    rootLogger.info('Adding a new student');
     
-    res.send({ newStudent });
-    //requestCounter.inc({'method':'Post', 'route': '/api/students', 'status_code': 200, 'many':false})
-    //total_Students.inc();
+    requestCounter.inc({'method':'Post', 'route': '/api/students', 'status_code': 200, 'many':false})
+    total_Students.inc();
     //Senior Students have an enrollement number bigger than 100
-    /*if(newStudent.enrollnumber>100) {
+    if(newStudent.enrollnumber>100) {
       total_senior_students.inc();
-    }*/
+    }
+    res.send({ newStudent });
   } catch(err) {
 
-    //var ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress
-    //let reqID = getRequestId();
-    //rootLogger.error('Failed to add a new student', {request_id: reqID, user_ip: ip});
+    var ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress
+    let reqID = getRequestId();
+    rootLogger.error('Failed to add a new student', {request_id: reqID, user_ip: ip});
 
-    //requestCounter.inc({'method':'Post', 'route': '/api/students', 'status_code': 400, 'many': false})
     res.status(400).send({ error: err });
+    requestCounter.inc({'method':'Post', 'route': '/api/students', 'status_code': 400, 'many': false})
   }
 
 });
@@ -99,18 +99,18 @@ router.put('/:id', async (req, res) => {
   try {
     const updatedStudent = await Students.findByIdAndUpdate(req.params.id, req.body);
     
-    //var ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress
-    //let reqID = getRequestId();
-    //rootLogger.info('Student with the following ID has been updated', {student_id:req.params.id,request_id: reqID, user_ip: ip});
+    var ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress
+    let reqID = getRequestId();
+    rootLogger.info('Student with the following ID has been updated', {student_id:req.params.id,request_id: reqID, user_ip: ip});
     
-    //requestCounter.inc({'method':'Put', 'route': '/api/students', 'status_code': 200, 'many':false})
+    requestCounter.inc({'method':'Put', 'route': '/api/students', 'status_code': 200, 'many':false})
     res.send({ message: 'The student was updated' });
   } catch(err) {
-    //requestCounter.inc({'method':'Put', 'route': '/api/students', 'status_code': 400, 'many':false})
+    requestCounter.inc({'method':'Put', 'route': '/api/students', 'status_code': 400, 'many':false})
     
-    //var ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress
-    //let reqID = getRequestId();
-    //rootLogger.error('Student with the following ID does not exist', {student_id:req.params.id,request_id: reqID, user_ip: ip});
+    var ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress
+    let reqID = getRequestId();
+    rootLogger.error('Student with the following ID does not exist', {student_id:req.params.id,request_id: reqID, user_ip: ip});
     
     res.status(400).send({ error: err });
   }
@@ -121,26 +121,26 @@ router.put('/:id', async (req, res) => {
 // @access  Public
 router.delete('/:id', async (req, res) => {
   try {
-    //requestCounter.inc({'method':'Delete', 'route': '/api/students/:id', 'status_code': 200, 'many':false})
+    requestCounter.inc({'method':'Delete', 'route': '/api/students/:id', 'status_code': 200, 'many':false})
     
-    //var ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress
-    //let reqID = getRequestId();
-    //rootLogger.info('Student with the following ID has been deleted', {student_id:req.params.id,request_id: reqID, user_ip: ip});
-
+    var ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress
+    let reqID = getRequestId();
+    rootLogger.info('Student with the following ID has been deleted', {student_id:req.params.id,request_id: reqID, user_ip: ip});
+    const Student = await Students.findById(req.params.id);
+    total_Students.dec();
+     if( Student['enrollnumber'] > 100) {
+       total_senior_students.dec()
+     }
     const removeStudent = await Students.findByIdAndRemove(req.params.id);
-    /*total_Students.dec();
-    if(total_senior_students > 100) {
-      total_senior_students.dec()
-    }*/
     res.send({ message: 'The student was removed' });
   } catch(err) {
-    //requestCounter.inc({'method':'Get', 'route': '/api/students', 'status_code': 400, 'many':false})
     
-    //var ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress
-    //let reqID = getRequestId();
-    //rootLogger.error('Student with the following ID does not exist', {student_id:req.params.id,request_id: reqID, user_ip: ip});
+    var ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress
+    let reqID = getRequestId();
+    rootLogger.error('Student with the following ID does not exist', {student_id:req.params.id,request_id: reqID, user_ip: ip});
     
     res.status(400).send({ error: err });
+    requestCounter.inc({'method':'Get', 'route': '/api/students', 'status_code': 400, 'many':false})
   }
 });
 

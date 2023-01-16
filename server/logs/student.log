@@ -28,3 +28,24 @@
 {"level":"info","message":"Get the list of all students","request_id":"12bfb88c-938c-4561-b173-dbbefc012185","timestamp":"2023-01-15T13:23:12.252Z","user_ip":"127.0.0.1"}
 {"level":"info","message":"Adding a new student","timestamp":"2023-01-15T13:23:27.598Z"}
 {"level":"info","message":"Get the list of all students","request_id":"a49882e8-a9c4-4ee8-a174-a76b14f886d4","timestamp":"2023-01-15T13:24:43.133Z","user_ip":"127.0.0.1"}
+{"level":"info","message":"Get the list of all students","request_id":"97558a0b-2d59-4a70-9e2a-9fa268d479d4","timestamp":"2023-01-16T16:30:15.841Z","user_ip":"127.0.0.1"}
+{"level":"info","message":"Get the list of all students","request_id":"0836e7cb-5ad7-4743-baea-4ad521130390","timestamp":"2023-01-16T16:30:20.580Z","user_ip":"127.0.0.1"}
+{"level":"info","message":"Get the list of all students","request_id":"247f3ecb-0111-4f1c-b10f-b64149ba26ae","timestamp":"2023-01-16T16:30:48.082Z","user_ip":"127.0.0.1"}
+{"level":"info","message":"Get the list of all students","request_id":"aeb1bfec-082e-4f64-b820-b6b3d9b71809","timestamp":"2023-01-16T16:31:22.224Z","user_ip":"127.0.0.1"}
+{"level":"info","message":"Get the list of all students","request_id":"ae997ef8-bb05-4473-889f-f23cf586c627","timestamp":"2023-01-16T16:31:23.794Z","user_ip":"127.0.0.1"}
+{"level":"info","message":"Get the list of all students","request_id":"5fc32261-7adb-4cf6-adc5-c0ba400b683b","timestamp":"2023-01-16T16:31:25.390Z","user_ip":"127.0.0.1"}
+{"level":"info","message":"Get the list of all students","request_id":"f585d9e2-7ffa-4338-9e2b-54ff8cdc540b","timestamp":"2023-01-16T16:32:03.941Z","user_ip":"127.0.0.1"}
+{"level":"info","message":"Get the list of all students","request_id":"04875557-2b10-4f43-819a-b632ab05c004","timestamp":"2023-01-16T16:32:38.676Z","user_ip":"127.0.0.1"}
+{"level":"info","message":"Get the student with the ID","request_id":"9bdee905-366a-4885-997e-6aedf4b263f3","student_id":"63c5632806c584bfa3412df5","timestamp":"2023-01-16T16:32:40.089Z","user_ip":"127.0.0.1"}
+{"level":"info","message":"Get the list of all students","request_id":"103488a7-4a4d-4e99-9da4-1a7fca291af1","timestamp":"2023-01-16T16:33:51.546Z","user_ip":"127.0.0.1"}
+{"level":"info","message":"Adding a new student","timestamp":"2023-01-16T16:34:06.346Z"}
+{"level":"info","message":"Get the list of all students","request_id":"17ab37c8-aacb-4d3d-8ce1-7a178953a45c","timestamp":"2023-01-16T16:34:56.846Z","user_ip":"127.0.0.1"}
+{"level":"info","message":"Get the student with the ID","request_id":"82c897d9-e8e0-4ce1-9781-d5ad5897b2e5","student_id":"63c57c7e220d6b38b527ee17","timestamp":"2023-01-16T16:35:10.168Z","user_ip":"127.0.0.1"}
+{"level":"info","message":"Student with the following ID has been updated","request_id":"a45f6be2-433e-4d53-8bca-bca4a9542b92","student_id":"63c57c7e220d6b38b527ee17","timestamp":"2023-01-16T16:35:18.469Z","user_ip":"127.0.0.1"}
+{"level":"info","message":"Get the list of all students","request_id":"5aefd598-0f77-4f6a-88a8-3d6a5b0781be","timestamp":"2023-01-16T16:36:01.115Z","user_ip":"127.0.0.1"}
+{"level":"info","message":"Student with the following ID has been deleted","request_id":"69ceeed4-fff9-4bf8-82a6-411598b1f4a5","student_id":"63c5632806c584bfa3412df5","timestamp":"2023-01-16T16:36:04.616Z","user_ip":"127.0.0.1"}
+{"level":"info","message":"Get the list of all students","request_id":"d4d0cf9c-7e94-439e-91fb-79b6cf491dd1","timestamp":"2023-01-16T16:36:05.127Z","user_ip":"127.0.0.1"}
+{"level":"info","message":"Adding a new student","timestamp":"2023-01-16T16:36:33.574Z"}
+{"level":"info","message":"Get the list of all students","request_id":"c9393a98-3e7e-4558-837b-758d1dee6b87","timestamp":"2023-01-16T16:36:35.519Z","user_ip":"127.0.0.1"}
+{"level":"info","message":"Student with the following ID has been deleted","request_id":"8c0734d7-696f-46e5-84a4-2ea68af55252","student_id":"63c57c7e220d6b38b527ee17","timestamp":"2023-01-16T16:36:43.661Z","user_ip":"127.0.0.1"}
+{"level":"info","message":"Get the list of all students","request_id":"7a5cf862-9ce4-4101-ac54-44b7350fbd6a","timestamp":"2023-01-16T16:36:44.154Z","user_ip":"127.0.0.1"}
