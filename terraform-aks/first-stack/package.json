@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "dd-trace": "^3.11.0"
+  }
+}

@@ -1,4 +1,5 @@
 const express = require('express');
+require('dd-trace').init()
 const bodyParser = require('body-parser');
 const path = require('path');
 require('./models/db');

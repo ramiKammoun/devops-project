@@ -1,0 +1,13 @@
+terraform-aks/first-stack/kubeconfig
+terraform-aks/first-stack/.terraform
+terraform-aks/first-stack/node_modules
+terraform-aks/first-stack/.terraform.lock.hcl
+terraform-aks/first-stack/package-lock.json
+terraform-aks/first-stack/package.json
+terraform-aks/second-stack/.terraform
+terraform-aks/second-stack/.terraform.lock.hcl
+terraform-aks/second-stack/terraform.tfstate
+terraform-aks/third-stack/.helm
+terraform-aks/third-stack/.terraform
+terraform-aks/third-stack/.terraform.lock.hcl
+.env
