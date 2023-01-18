@@ -157,4 +157,13 @@ __Helm Chart__ was used for doployment purposes.
 ### Deployement Strategy
 During the applying of Terraform, I tried to make ArgoCD work for my deployment strategy but problems took place and I couldn't fix the bugs so I didn't implement any deployment strategy. 
 
-__Hypothetically speaking__
+__Hypothetically speaking :__ If I were to choose a deployment strategy i would choose __blue/green__ because:
+- It offers zero-downtime deployment
+- We can rollback to a previous version in case of an issue in the new version.
+
+Generally speaking, my application is offered to students who need it to be available the whole time everyday so having an application that's down is not ideal. 
+And the last reason is for its ``easy scalability``.
+
+- __Easy Scaling :__ We can scale one environment while the other is serving traffic, and then switch traffic to the newly scaled environment. 
+
+In times of school comeback, it is crucially necessary to have an application that can resist high trafficking at times. 

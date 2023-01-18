@@ -14,10 +14,12 @@ spec:
     metadata:
       labels:
         app: students-server
+        admission.datadoghq.com/enabled: "true"
       annotations:
         prometheus.io/port: "5000"
-        prometheus.io/path: "/metrics"
+        prometheus.io/path: "/api/metrics"
         prometheus.io/scrape: "true"
+        admission.datadoghq.com/nodejs-lib.version: v3.11.0
     spec:
       containers:
         - name: students-server
@@ -30,6 +32,14 @@ spec:
               configMapKeyRef:
                 name: my-config
                 key: port
+          - name: DD_AGENT_HOST
+            valueFrom:
+              fieldRef:
+                fieldPath: status.hostIP
+          - name: DD_LOGS_INJECTION
+            value: "true"
+          - name: DD_TRACE_STARTUP_LOGS
+            value: "true"
 
           ports:
             - containerPort: 5000

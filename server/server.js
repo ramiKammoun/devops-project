@@ -1,5 +1,9 @@
 const express = require('express');
-require('dd-trace').init()
+//const opentelemetry = require('@opentelemetry/node');
+const tracer = require('dd-trace').init()
+// const { DatadogTraceExporter } = require('@opentelemetry/exporter-datadog');
+// const exporter = new DatadogTraceExporter({ apiKey: '4ee1546ec11915d68c07cd6a4a24e7d0' });
+// opentelemetry.trace.init({ exporter });
 const bodyParser = require('body-parser');
 const path = require('path');
 require('./models/db');
@@ -9,6 +13,9 @@ const {requestCounter} = require('./metrics')
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+// const tracer = opentelemetry.trace.getTracer();
+const span = tracer.start('my_span');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -34,7 +41,8 @@ app.get('/metrics', async (req, res) => {
 
   }
 })
-
+span.end();
+exporter.flush();
 // Production
 if (process.env.NODE_ENV === 'production') {
   // Set static folder
