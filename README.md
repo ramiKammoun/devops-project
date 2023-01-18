@@ -251,3 +251,5 @@ And the last reason is for its ``easy scalability``.
 - __Easy Scaling :__ We can scale one environment while the other is serving traffic, and then switch traffic to the newly scaled environment. 
 
 In times of school comeback, it is crucially necessary to have an application that can resist high trafficking at times. 
+***
+P.S. This work might not be highly sophisticated, but it's a learning project that took time, sweat and tears. And I do believe that it's always about what's exactly learned and the journey of learning. I hope you appreciate the effort of this work and have a wonderful day.
