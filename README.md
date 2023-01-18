@@ -12,7 +12,7 @@ The application that will be showcased is a simple version of a students enrolle
 <li>Editing the information of a new student</li>
 <li>Deleting an existing student</li>
 </ol>
-The application uses a MongoDB database that is already deployed on the cloud. You can access the website by clicking on this [Link](http://expressjs.com/)
+The application uses a MongoDB database that is already deployed on the cloud. You can access the website by clicking on this [Link](http://51.138.203.243/)
 
 ![Home Window](screenshots/Screenshot_2023-01-17_11-09-11.png)
 
@@ -27,7 +27,7 @@ With the definition of the ability to understand the internal state of a system 
 #### Metrics
 
 In our application, metrics are used to monitor and track the performance, availability, and overall health of our system. 
-```
+```js
 const requestCounter = new client.Counter({
     name: 'requests_total',
     help: '\n The total number of requests handled by the server',
@@ -76,7 +76,7 @@ In the picture down below, we can visualize our daily metrics of monitoring our 
 In the screen above we can see the ratio between the *total_students* and *total_senior_students* is *50%*.
 
 Finally, the counter was labeled by ``method, route, status and whether it fetches multiple data or not.``
-```
+```js
 labelNames: ['method','route','status_code','many']
 ```
 
@@ -88,7 +88,7 @@ At the beginning we need to define a logger and then implement it locally within
 For our application, we defined Logs in two ways, the first one locacally in the phase of implementing our application and the second one by using a platform called __Datadog__ used for logs and traces and monitoring the different states of our applications using dashbaords.
 
 In order for the logs to work, we need to integrate them into our code this way:
-```
+```js
 const rootLogger = createLogger({
     level: 'info',
     exitOnError: false,
@@ -103,7 +103,7 @@ const rootLogger = createLogger({
 });
 ```
 then
-```
+```js
 rootLogger.info('Get the list of all students', {request_id: reqID, user_ip: ip});
 ```
 
@@ -124,9 +124,37 @@ When sending a request to our server for ``Failing to add a new student`` of all
 When looking at the screens above, we can notice that we have added the ``request_id``, the ``user_ip`` and even the ``student_id`` in some cases.
 
 ## 3. Traces using OpenTlemetry 
+## 4. Helm 
 
 # Automation
 
 For the automation I used 3 stacks in Terraform
 
-1. __First Stack :__ For the first stack
+__Terraform__ is an IaaC tool that allows us to provision and manage cloud resources using code.
+
+1. __First Stack :__ For the first stack, we provisioned our AKS cluster and the resource group it belongs to.
+
+2. __Second Stack :__ For the second stack, a setup for our webapp using Kubernetes provider as well as Helm provider.
+
+3. __Third Stack :__ For the third stack, we provisioned our Ingress resource in order to ensure the load balancing between our two services, the frontend and the backend.
+
+# Deployment
+
+In our application, we only have two microservices:
+- Front-End microservice
+- Back-end microservice
+Both of them were deployed by being built by Docker, then pushed in the Docker Hub and eventually being deployed on our Kubernetes cluster in Microsoft Azure.
+
+In the follwing images, you will find the different .yaml files that we had to create in that same preserved order.
+![treelogic](screenshots/tree.png)
+
+### Application Deployment Architecture
+
+__Helm Chart__ was used for doployment purposes.
+
+![venice](screenshots/venice_bi.png)
+
+### Deployement Strategy
+During the applying of Terraform, I tried to make ArgoCD work for my deployment strategy but problems took place and I couldn't fix the bugs so I didn't implement any deployment strategy. 
+
+__Hypothetically speaking__
