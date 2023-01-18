@@ -3,8 +3,8 @@ deployment:
 
 image:
   tag: latest
-  apiname: ramikammoun2023/server
-  frontname: ramikammoun2023/client
+  servername: ramikammoun2023/server
+  clientname: ramikammoun2023/client
 
 http:
   frontendport: 3000

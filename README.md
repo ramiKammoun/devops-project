@@ -12,7 +12,7 @@ The application that will be showcased is a simple version of a students enrolle
 <li>Editing the information of a new student</li>
 <li>Deleting an existing student</li>
 </ol>
-The application uses a MongoDB database that is already deployed on the cloud. You can access the website by clicking on this [Link](http://51.138.203.243/)
+The application uses a MongoDB database that is already deployed on the cloud. You can access the website by clicking on this [link](http://51.138.203.243/)
 
 ![Home Window](screenshots/Screenshot_2023-01-17_11-09-11.png)
 
@@ -123,9 +123,71 @@ When sending a request to our server for ``Failing to add a new student`` of all
 ![lisy](screenshots/loffail.png)
 When looking at the screens above, we can notice that we have added the ``request_id``, the ``user_ip`` and even the ``student_id`` in some cases.
 
-## 3. Traces using OpenTlemetry 
+## 3. Traces using OpenTelemetry 
+In this part, I tried to implement OpenTelemetry in order to view traces and that was by implementing the following code: 
+```js
+const opentelemetry = require('@opentelemetry/node');
+const tracer = require('dd-trace').init()
+const { DatadogTraceExporter } = require('@opentelemetry/exporter-datadog');
+const exporter = new DatadogTraceExporter({ apiKey: 'API_KEY' });
+opentelemetry.trace.init({ exporter });
+const bodyParser = require('body-parser');
+const tracer = opentelemetry.trace.getTracer();
+const span = tracer.start('my_span');
+```
+and add to 01-Deployment.yaml the following code:
+```yaml
+spec:
+      containers:
+        .....
+          env:
+          ......
+          - name: DD_AGENT_HOST
+            valueFrom:
+              fieldRef:
+                fieldPath: status.hostIP
+          - name: DD_LOGS_INJECTION
+            value: "true"
+          - name: DD_TRACE_STARTUP_LOGS
+            value: "true"
+          .....
+```
+But unfortunately, the configurations was not successful :(
 ## 4. Helm 
+``Helm charts`` are a package manager for Kubernetes that allows you to easily install, upgrade and manage Kubernetes applications through a set of templates and configuration files.
+In our helm chart we defined a ``values.yaml`` file in order to customize the deployment of our application. 
+```yaml
+deployment:
+  replicas: 1
 
+image:
+  tag: latest
+  servername: ramikammoun2023/server
+  clientname: ramikammoun2023/client
+
+http:
+  frontendport: 3000
+  backendport: 5000
+
+labels:
+  app: students-server
+  env: production
+```
+and a __Chart.yaml__
+```yaml
+apiVersion: v2
+name: students-list1
+description: Helm chart for students list project
+version: 0.1.0
+```
+and then adding to the ``deployment file``:
+```yaml
+spec:
+  replicas: {{.Values.deployment.replicas}}
+ports:
+  - containerPort: {{.Values.http.backendport}}
+...
+```
 # Automation
 
 For the automation I used 3 stacks in Terraform
