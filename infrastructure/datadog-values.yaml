@@ -6,3 +6,5 @@ datadog:
   logs:
     enabled: true
     containerCollectAll: true
+  apm_config:
+    enabled: true 
