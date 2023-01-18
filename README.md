@@ -216,6 +216,28 @@ __Helm Chart__ was used for doployment purposes.
 
 ![venice](screenshots/venice_bi.png)
 
+### Config_Map and Secrets
+In our application, we have used config-maps to replace the ``.env`` file.
+```yaml
+apiVersion: v1
+data:
+  key1: config1
+  NODE_END: "production"
+  port: "5000"
+kind: ConfigMap
+metadata:
+  name: my-config
+
+```
+And we used ``Secrets`` encoded in Base64 in order to hide our secrets, in our case, it was the URL for the connection to the DataBase.
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: secrets-server
+data:
+  CONNECTION_URL: .....
+```
 ### Deployement Strategy
 During the applying of Terraform, I tried to make ArgoCD work for my deployment strategy but problems took place and I couldn't fix the bugs so I didn't implement any deployment strategy. 
 
